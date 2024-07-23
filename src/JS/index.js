@@ -1,3 +1,5 @@
+import "../SASS/styles.scss";
+
 const key = "PNXY24FCQNFAM9JV5G8Y3Y7V5";
 
 const getLocation = () => {};

@@ -1,3 +1,8 @@
+// npm init
+// npm install webpack webpack-cli --save-dev
+// npm install --save-dev html-webpack-plugin
+// npm i -D sass style-loader css-loader sass-loader
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -9,15 +14,15 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Development",
+    }),
+  ],
   module: {
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: "Development",
-      }),
-    ],
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/i,
         use: [
           // Creates `style` nodes from JS strings
           "style-loader",
