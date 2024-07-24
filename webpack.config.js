@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // npm init -y
 // npm i -D webpack webpack-cli
 // npm i -D sass style-loader css-loader sass-loader
@@ -10,12 +9,6 @@
 // optional
 // npm i -D babel-loader @babel/core @babel/preset-env
 // npm i axios
-=======
-// npm init
-// npm install webpack webpack-cli --save-dev
-// npm install --save-dev html-webpack-plugin
-// npm i -D sass style-loader css-loader sass-loader
->>>>>>> 226232409c47e2f34ddeaeb090b470ce26d04685
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -53,7 +46,6 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/i,
-<<<<<<< HEAD
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
@@ -65,16 +57,6 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
-=======
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
->>>>>>> 226232409c47e2f34ddeaeb090b470ce26d04685
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
