@@ -2,12 +2,12 @@
 // npm i -D webpack webpack-cli
 // npm i -D sass style-loader css-loader sass-loader
 // npm i -D html-webpack-plugin
+// npm i -D babel-loader @babel/core @babel/preset-env
 
 // combined
-// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin
+// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin babel-loader @babel/core @babel/preset-env
 
 // optional
-// npm i -D babel-loader @babel/core @babel/preset-env
 // npm i axios
 
 const path = require("path");
@@ -37,11 +37,6 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Development",
-    }),
-  ],
   module: {
     rules: [
       {
@@ -66,7 +61,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Webpack Template",
+      title: "Weather App",
       filename: "index.html",
       template: "src/templates/index.html",
     }),
