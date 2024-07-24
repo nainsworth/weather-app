@@ -1,31 +1,57 @@
+// npm init -y
+// npm i -D webpack webpack-cli
+// npm i -D sass style-loader css-loader sass-loader
+// npm i -D html-webpack-plugin
+
+// combined
+// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin
+
+// optional
+// npm i -D babel-loader @babel/core @babel/preset-env
+// npm i axios
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// npm i -D webpack-bundle-analyzer
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
-  entry: "./src/js/index.js",
+  entry: {
+    bundle: path.resolve(__dirname, "src/js/index.js"),
+  },
   output: {
-    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    filename: "[name][contenthash].js",
     clean: true,
+    assetModuleFilename: "[name][ext]",
+  },
+  devtool: "source-map",
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
   },
   module: {
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: "Development",
-      }),
-    ],
     rules: [
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+        test: /\.scss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/i,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -33,4 +59,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack Template",
+      filename: "index.html",
+      template: "src/templates/index.html",
+    }),
+    // new BundleAnalyzerPlugin(),
+  ],
 };
