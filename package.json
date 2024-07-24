@@ -7,6 +7,7 @@
     "build": "webpack",
     "dev": "webpack serve"
   },
+<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "weather-app"
@@ -21,8 +22,22 @@
     "html-webpack-plugin": "^5.6.0",
     "sass": "^1.77.8",
     "sass-loader": "^15.0.0",
+=======
+  "keywords": [],
+  "author": "Nicholas Ainsworth",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "sass": "^1.77.8",
+    "sass-loader": "^14.2.1",
+>>>>>>> 226232409c47e2f34ddeaeb090b470ce26d04685
     "style-loader": "^4.0.0",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "weather-app"
   }
 }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import "../styles/main.scss";
+=======
+import "../SASS/styles.scss";
+>>>>>>> 226232409c47e2f34ddeaeb090b470ce26d04685
 
 const key = "PNXY24FCQNFAM9JV5G8Y3Y7V5";
 
