@@ -1,9 +1,17 @@
 import "../styles/main.scss";
-import fetchData from "./api.js";
+import { fetchWeatherData, fetchLocationData } from "./api.js";
+import { loadWeather } from "./weather.js";
 
+// fetchData(70364);
+const zipcode = "70364";
 
-fetchData(70364);
+fetchLocationData(zipcode).then((data) => {
+  const city = `${data.results[0].address_components[1].long_name}`;
+  const state = `${data.results[0].address_components[2].short_name}`;
 
-// const current = document.querySelector(".current-weather-container");
+  console.log(city, state);
+});
 
-// current.append()
+fetchWeatherData(zipcode).then((data) => {
+  loadWeather(data);
+});
