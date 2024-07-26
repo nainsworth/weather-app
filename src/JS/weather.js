@@ -1,4 +1,3 @@
-// import fetchData from "./api.js";
 import { convertTemp } from "./utils.js";
 
 const loadWeather = (data) => {
