@@ -1,3 +1,5 @@
+import { loadDefault } from "./utils.js";
+
 const WEATHER_API_KEY = "PNXY24FCQNFAM9JV5G8Y3Y7V5";
 const GEOLOCATION_API_KEY = "AIzaSyC5CSdjxWA23tp6lPlt4Yx4ZMOJGuFt7fE";
 
@@ -14,6 +16,7 @@ async function fetchWeatherData(request) {
     return data;
   } catch (error) {
     console.error(`Error: ${error}`);
+    loadDefault();
   }
 }
 

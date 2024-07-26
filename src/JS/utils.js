@@ -5,16 +5,24 @@ const convertTemp = (temp) => {
   return (temp * (9 / 5) + 32).toFixed(0);
 };
 
+const validateZip = (zip) => {
+  if (/^[0-9]{5}(?:-[0-9]{4})?$/.test(zip)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const convertZip = (data) => {
-  const city = data.results[0].address_components[1].long_name;
-  const state = data.results[0].address_components[3].short_name;
-
-  console.log(data);
-
-  fetchWeatherData(`${city} ${state}`).then((data) => {
+  fetchWeatherData(data.results[0].formatted_address).then((data) => {
     loadWeather(data);
   });
 };
 
-console.log(location);
-export { convertTemp, convertZip };
+const loadDefault = () => {
+  fetchWeatherData("New Orleans").then((data) => {
+    loadWeather(data);
+  });
+};
+
+export { convertTemp, convertZip, loadDefault, validateZip };
