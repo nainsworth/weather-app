@@ -3,9 +3,10 @@
 // npm i -D sass style-loader css-loader sass-loader
 // npm i -D html-webpack-plugin
 // npm i -D babel-loader @babel/core @babel/preset-env
+// npm i -D html-loader
 
 // combined
-// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin babel-loader @babel/core @babel/preset-env
+// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin babel-loader @babel/core @babel/preset-env html-loader
 
 // optional
 // npm i axios

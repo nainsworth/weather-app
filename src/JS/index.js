@@ -1,4 +1,4 @@
-import "../styles/main.scss";
+import "../assets/styles/main.scss";
 import { fetchWeatherData, fetchLocationData } from "./api.js";
 import { loadWeather } from "./weather.js";
 
