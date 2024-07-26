@@ -1,5 +1,6 @@
 const WEATHER_API_KEY = "PNXY24FCQNFAM9JV5G8Y3Y7V5";
 const GEOLOCATION_API_KEY = "AIzaSyC5CSdjxWA23tp6lPlt4Yx4ZMOJGuFt7fE";
+const location = "";
 
 // Fetches Data from Weather API
 async function fetchWeatherData(request) {
@@ -27,12 +28,17 @@ async function fetchLocationData(request) {
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
+
     const data = await response.json();
-    console.log(data);
+
+    // return these results
+    // const city = data.results[0].address_components[1].long_name;
+    // const state = data.results[0].address_components[2].short_name;
+
     return data;
   } catch (error) {
     console.error(`Error: ${error}`);
   }
 }
 
-export { fetchLocationData, fetchWeatherData };
+export { fetchLocationData, fetchWeatherData, location };
