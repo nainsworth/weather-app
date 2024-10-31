@@ -1,5 +1,5 @@
 import { fetchWeatherData } from "./api.js";
-import { loadWeather } from "./weather.js";
+import { loadWeather, updateWeather } from "./weather.js";
 
 const convertTemp = (temp) => {
   return (temp * (9 / 5) + 32).toFixed(0);
@@ -15,7 +15,7 @@ const validateZip = (zip) => {
 
 const convertZip = (data) => {
   fetchWeatherData(data.results[0].formatted_address).then((data) => {
-    loadWeather(data);
+    updateWeather(data);
   });
 };
 
