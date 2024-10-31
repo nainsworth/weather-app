@@ -7,7 +7,6 @@
 
 // combined
 // npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin babel-loader @babel/core @babel/preset-env html-loader
-
 // optional
 // npm i axios
 
@@ -23,7 +22,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name][contenthash].js",
+    filename: "[name].bundle.js",
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
