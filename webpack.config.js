@@ -18,10 +18,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/js/index.js"),
+    main: path.resolve(__dirname, "src/js/index.js"),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/"),
     filename: "[name].bundle.js",
     clean: true,
     assetModuleFilename: "[name][ext]",
@@ -29,7 +29,7 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "dist"),
+      directory: path.resolve(__dirname, "dist/"),
     },
     port: 3000,
     open: true,
@@ -41,7 +41,16 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              api: "modern-compiler",
+            },
+          },
+        ],
       },
       {
         test: /\.js$/,
