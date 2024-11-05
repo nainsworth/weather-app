@@ -10,14 +10,28 @@ const updateLocation = (data) => {
   location = data;
 };
 
-const handleSearch = () => {
+const search = () => {
   const locationSearch = document.getElementById("locationSearch");
-  const searchBtn = document.getElementById("searchBtn");
+  // const searchBtn = document.getElementById("searchBtn");
 
-  searchBtn.addEventListener("click", () => {
+  if (locationSearch.value !== "") {
     updateLocation(locationSearch.value);
     loadResults();
     locationSearch.value = "";
+  }
+};
+
+const handleEventListener = () => {
+  addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      search();
+    }
+  });
+  addEventListener("click", (e) => {
+    if (e.target.id === "searchBtn") {
+      search();
+    }
   });
 };
 
@@ -34,4 +48,4 @@ const loadResults = () => {
 };
 
 loadDefault();
-handleSearch();
+handleEventListener();
