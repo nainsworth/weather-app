@@ -4,8 +4,7 @@
 :root {
   /* Primary Colors */
   --black: #000000;
-  --very-dark-cyan: hsl(156, 42%, 18%);
-  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: #02598b;
 
   /* Neutral Colors */
   --dark-blue: #005986;
@@ -16,7 +15,7 @@
   --font-roboto: "Roboto";
   --font-regular: 500;
   --font-bold: 800;
-  --font-size: 16px;
+  --font-size: 18px;
 }
 
 /* Styling Reset */
@@ -42,12 +41,72 @@ body {
   align-items: center;
   min-height: 100vh;
 
+  nav {
+    background-color: var(--dark-blue);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    form {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    svg {
+      height: 24px;
+      position: absolute;
+     right: 12px;
+    }
+
+    #locationSearch {
+      font-size: var(--font-size);
+
+      width: 400px;
+      border-radius: 20px;
+      border: none;
+      background: hsla(0, 0%, 100%, 0.2);
+      margin: 20px 0;
+      padding: 8px;
+      text-align: center;
+
+      color: var(--white);
+
+      &::placeholder {
+        color: var(--white);
+      }
+    }
+  }
+
   main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    flex: 1;
+    margin: 10%;
+    max-width: 720px;
+
+    .current-weather-container {
+      background-color: var(--white);
+      width: 75vw;
+      border-radius: 8px;
+      display: grid;
+      padding: 16px;
+    }
+
+    h1 {
+      font-size: 80px;
+      grid-area: 2 / 2 / 3 / 3;
+      justify-self: end;
+    }
+
+    h2 {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    p {
+      font-size: 24px;
+      grid-area: 2 / 1 / 3 / 2;
+      align-self: center;
+    }
   }
 
   footer {

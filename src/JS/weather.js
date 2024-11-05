@@ -16,7 +16,7 @@ const loadWeather = (data) => {
 
 const updateWeather = (data) => {
   location.textContent = `${data.resolvedAddress}`;
-  currentTemp.textContent = `${convertTemp(data.currentConditions.temp)} °F`;
+  currentTemp.textContent = `${convertTemp(data.currentConditions.temp)}°`;
   currentCondition.textContent = `${data.currentConditions.conditions}`;
 };
 
