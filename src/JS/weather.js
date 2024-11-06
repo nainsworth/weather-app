@@ -32,7 +32,7 @@ const generateForecast = (data) => {
 
   futureWeather.appendChild(title);
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 1; i <= 10; i++) {
     const date = new Date(data.days[i].datetime);
     const weekday = new Intl.DateTimeFormat("en-US", {
       weekday: "short",
