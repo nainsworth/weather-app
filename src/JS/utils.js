@@ -25,7 +25,4 @@ const loadDefault = () => {
   });
 };
 
-const convertDate = () => {
-}
-
 export { convertTemp, convertZip, loadDefault, validateZip };

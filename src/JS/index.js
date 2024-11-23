@@ -12,7 +12,6 @@ const updateLocation = (data) => {
 
 const search = () => {
   const locationSearch = document.getElementById("locationSearch");
-  // const searchBtn = document.getElementById("searchBtn");
 
   if (locationSearch.value !== "") {
     updateLocation(locationSearch.value);

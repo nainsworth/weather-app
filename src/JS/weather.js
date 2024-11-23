@@ -6,8 +6,6 @@ const currentTemp = document.createElement("h1");
 const currentCondition = document.createElement("p");
 
 const loadWeather = (data) => {
-  console.log(data.days);
-
   updateWeather(data);
   currentWeather.appendChild(location);
   currentWeather.appendChild(currentTemp);
