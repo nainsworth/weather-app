@@ -18,11 +18,10 @@ Connecting to a weather api to see current weather on searchable locations
 
 ### Screenshot
 
-![](.src/assets/images/screenshot.png)
+![Screenshot](./screenshot.png)
 
 ### Links
 
-- Solution URL: [https://www.theodinproject.com/lessons/node-path-javascript-weather-app/project_submissions](https://www.theodinproject.com/lessons/node-path-javascript-weather-app/project_submissions)
 - Live Site URL: [https://nainsworth.github.io/weather-app/](https://nainsworth.github.io/weather-app/)
 
 ## Author
