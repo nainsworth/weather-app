@@ -18,7 +18,7 @@ Connecting to a weather api to see current weather on searchable locations
 
 ### Screenshot
 
-![](./assets/images/screenshot.png)
+![](.src/assets/images/screenshot.png)
 
 ### Links
 
